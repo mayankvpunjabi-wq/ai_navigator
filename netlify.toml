@@ -1,14 +1,24 @@
-# Netlify configuration for Next.js 16 with App Router inside src/
+# Netlify configuration for Next.js (App Router in src/)
 
 [build]
-  command = "npm install && npm run build"
-  # Do NOT set base or publish — the Next.js plugin handles it automatically
+
+  command = "npm run build"
+
+
+
 
 [build.environment]
+
   NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
+
   NEXT_TELEMETRY_DISABLED = "1"
+
+
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+
+
+
 
