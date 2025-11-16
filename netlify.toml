@@ -1,18 +1,16 @@
-# Netlify configuration for Next.js with App Router in src/
+# Netlify configuration for Next.js (App Router in src/)
 
 [build]
-base = "."              # Root of the repository
 command = "npm run build"
-publish = ".next"       # Next.js default build output
+publish = ".next"        # Next.js default build output
+# No base directory — the plugin will detect src/app automatically
 
 [build.environment]
-NODE_VERSION = "22"
+NODE_VERSION = "22"      # match your local Node version
 NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
-
-
 
 
 
