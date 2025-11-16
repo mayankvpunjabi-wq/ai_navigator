@@ -1,22 +1,16 @@
 # Netlify configuration for Next.js (App Router in src/)
 
 [build]
-
-  command = "npm run build"
-
-
-
+command = "npm run build"
+publish = ".next"  # Next.js default build output for Netlify
 
 [build.environment]
-
-  NODE_VERSION = "20"
-
-  NEXT_TELEMETRY_DISABLED = "1"
-
-
+NODE_VERSION = "20"
+NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
+package = "@netlify/plugin-nextjs"
+
 
 
 
