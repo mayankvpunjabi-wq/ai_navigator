@@ -1,9 +1,8 @@
 # Netlify configuration for Next.js 16 with App Router inside src/
 
 [build]
-  base = "src"                  # <-- Look inside src for your Next.js app
   command = "npm install && npm run build"
-  # Do NOT set publish directory, plugin handles it
+  # Do NOT set base or publish — the plugin handles it
 
 [build.environment]
   NODE_VERSION = "20"
@@ -12,9 +11,5 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    base = "src"                # <-- Tells plugin where to find your app
-
-
 
 
