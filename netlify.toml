@@ -1,21 +1,20 @@
-# Netlify configuration for Next.js 16 with App Router
-# App is in the root directory (not a subfolder)
+# Netlify configuration for Next.js 16 with App Router inside src/
 
 [build]
-  # Command to build Next.js
-  command = "npm run build"
+  base = "src"                  # <-- Look inside src for your Next.js app
+  command = "npm install && npm run build"
+  # Do NOT set publish directory, plugin handles it
 
 [build.environment]
-  # Node.js version
   NODE_VERSION = "20"
-  # Ensures dependency installation works for peer deps
   NPM_FLAGS = "--legacy-peer-deps"
-  # Disable Next.js telemetry
   NEXT_TELEMETRY_DISABLED = "1"
 
-# Netlify Next.js plugin handles routing, serverless functions, and publish automatically
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    base = "src"                # <-- Tells plugin where to find your app
+
 
 
 
