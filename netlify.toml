@@ -6,7 +6,7 @@ command = "npm run build"
 publish = ".next"       # Next.js default build output
 
 [build.environment]
-NODE_VERSION = "20"
+NODE_VERSION = "22"
 NEXT_TELEMETRY_DISABLED = "1"
 
 [[plugins]]
