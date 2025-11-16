@@ -1,0 +1,41 @@
+# Netlify configuration for Next.js 16 with App Router
+# 
+# CURRENT SETUP: App is in the root directory
+# If your app is in a subfolder (e.g., frontend/), see instructions at the bottom
+
+[build]
+  # Build command for Next.js
+  command = "npm run build"
+  
+  # Publish directory - Let the Netlify Next.js plugin handle this automatically
+  # The plugin processes .next and creates the proper deployment
+  # Do NOT manually set publish directory when using the plugin
+
+# Environment variables
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+  # Disable Next.js telemetry for faster builds
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Install Netlify Next.js plugin (REQUIRED for Next.js 13+ App Router)
+# This handles routing, ISR, serverless functions, and publish directory automatically
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# ============================================
+# IF YOUR APP IS IN A SUBFOLDER (e.g., frontend/):
+# ============================================
+# Replace the [build] section above with:
+#
+# [build]
+#   base = "frontend"                    # Path to your Next.js app folder
+#   command = "cd frontend && npm run build"
+#   # Don't set publish - let the plugin handle it
+#
+# And update the plugin:
+# [[plugins]]
+#   package = "@netlify/plugin-nextjs"
+#   [plugins.inputs]
+#     base = "frontend"
+
