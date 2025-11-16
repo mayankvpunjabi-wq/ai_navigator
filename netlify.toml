@@ -2,7 +2,7 @@
 
 [build]
   command = "npm install && npm run build"
-  # Do NOT set base or publish — the plugin handles it
+  # Do NOT set base or publish — the Next.js plugin handles it automatically
 
 [build.environment]
   NODE_VERSION = "20"
@@ -11,5 +11,4 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
 
